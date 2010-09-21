@@ -1,0 +1,26 @@
+//
+// Prefix header for all source files of the 'CocoaTouchStaticLibrary' target in the 'CocoaTouchStaticLibrary' project.
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
+
+#if TARGET_OS_IPHONE
+#define HAVE_BLOCK 0
+
+#define NSXMLDocument CXMLDocument
+#define NSXMLNode CXMLNode
+
+#import "TouchXML.h"
+#else
+#define HAVE_BLOCK 1
+#endif
+
+#if 0
+#define MLLog(format, ...) NSLog(format, ## __VA_ARGS__)
+#else
+#define MLLog(format, ...)
+#endif
+
+#import "NSXMLNode_Additions.h"
